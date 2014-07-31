@@ -1,7 +1,7 @@
 ## Description
-Splash.JS is a Object Oriented style plugin.
-This plugin takes 1 DOM element and resizes its height based on the height (and width) of the browser window.
-The plugin can also take 1-2 other elements (above and/or below) and again resize the middle element based on those 1-2 element(s)' height(s).
+Splash.JS is an Object Oriented style plugin.  
+This plugin takes 1 DOM element and resizes its height based on the height (and width) of the browser window.  
+The plugin can also take 1-2 other elements (above and/or below) and again resize the middle element based on those 1-2 element(s)' height(s).  
 It is especially useful for very large window sizes.
 
 Please see the [examples](examples) directory for very simplified use-cases.
