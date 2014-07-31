@@ -30,6 +30,7 @@ myapp.init( $('#myIntroHeader'), $('#myWelcomeMessage'), $('#myStaticNavigation'
 
 The `init()` method can take 6 parameters.
 These are the parameters in order and the data they expect.
+
 1. The Dynamic Element => jQuery object -- **Required**
   * This is the element that changes its height depending on the height of the browser.
 2. The Sticky Element => jQuery object -- Optional *( default: null )*
