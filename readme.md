@@ -55,7 +55,7 @@ myapp.init( $('#myIntroHeader'), null, null, null, false, false );
 ```javascript
 myapp.setSplashElements( $('#myIntroHeader'), $('#myWelcomeMessage'), $('#myStaticNavigation') ); // Set Splash elements manually
 myapp.setDynamicElementsHeight( 500 ); // Set the height of the dynamic element manually
-myapp.setHeightBreakpoint( 1000 ); // When to execute height changes based on width
+myapp.setHeightBreakpoint( 1000 ); // When to execute height changes based on height
 myapp.setWidthBreakpoint( 767 ); // When to execute height changes based on width
 myapp.setPageElementCheck( "body.frontpage" ); // Add a page element to check for before executing
 ```
