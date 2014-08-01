@@ -2,7 +2,7 @@
 // Description :  A plugin that will dynamically adjust an element's height based on browser window's height and other factors
 // Author      :  James Mann -- WebCakes
 // Websites    :  http://www.jameswmann.com, http://www.webcakes.ca
-// Version     :  0.1.0
+// Version     :  0.1.1
 
 // Global Variables
 var windowWidth;
