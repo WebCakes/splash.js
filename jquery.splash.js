@@ -27,15 +27,15 @@ var Splash = function() {
       debug = debugBoolean;
     }
 
+    if ( pageObjectCheck ) {
+      app.setPageElementCheck( pageObjectCheck );
+    }
+
     if ( app.checkForPageElement() ) {
       if ( dynamicObject ) {
         app.setSplashElements( dynamicObject, stickyObject, staticObject );
       } else {
         app.log( "You must set your Splash Elements or Height Breakpoint Manually and run." );
-      }
-
-      if ( pageObjectCheck ) {
-        app.setPageElementCheck( pageObjectCheck );
       }
 
       if ( onResizeBoolean && $.type( onResizeBoolean ) === "boolean" ) {
@@ -200,14 +200,14 @@ var Splash = function() {
       app.log( "Manually Checking for: " + pageElementCheck );
     } else if ( pageElementCheck ) {
       if ( $( pageElementCheck ).length ) {
-        app.log( "Page Element Exists. Success!" );
+        app.log( "Page Element Exists. Success! Continuing..." );
         return true;
       } else {
-        app.log( "Page Element does not exist. Failure!" );
+        app.log( "Page Element does not exist. Stopping..." );
         return false;
       }
     } else {
-      app.log( "No Page Element to Check for. Passing." );
+      app.log( "No Page Element to check for. Passing..." );
       return true;
     }
   };
