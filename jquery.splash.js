@@ -21,14 +21,44 @@ var splashElements = {}; // All Elements that are involved with the Splash Scree
 var Splash = function() {
   var app = this;
   var debug = false;
+  var dynamicObject, stickyObject, staticObject;
+  var pageObjectCheck;
 
-  this.init = function( dynamicObject, stickyObject, staticObject, pageObjectCheck, onResizeBoolean, debugBoolean ) {
-    if ( debugBoolean && $.type( debugBoolean ) === "boolean" ) {
-      debug = debugBoolean;
+  this.init = function( elements, options ) {
+    if ( elements && $.type( elements ) === "object" ) {
+      if ( elements.dynamicObject !== undefined ) {
+        dynamicObject = elements.dynamicObject;
+      }
+      if ( elements.stickyObject !== undefined ) {
+        stickyObject = elements.stickyObject;
+      }
+      if ( elements.staticObject !== undefined ) {
+        staticObject = elements.staticObject;
+      }
+    } else {
+      app.log( "No Elements have been set." );
+      elements = {};
     }
 
-    if ( pageObjectCheck ) {
-      app.setPageElementCheck( pageObjectCheck );
+    if ( options && $.type( options ) === "object" ) {
+      if ( options.pageObjectCheck !== undefined && $.type( options.pageObjectCheck ) === "string" ) {
+        app.setPageElementCheck( options.pageObjectCheck );
+      }
+      if ( options.onResizeBoolean !== undefined && $.type( options.onResizeBoolean ) === "boolean" ) {
+        onResize = options.onResizeBoolean;
+
+        if ( onResize ) {
+          app.log( "Reponsive on-resize: Enabled" );
+        } else {
+          app.log( "Reponsive on-resize: Disabled" );
+        }
+      }
+      if ( options.debugBoolean !== undefined && $.type( options.debugBoolean ) === "boolean" ) {
+        debug = options.debugBoolean;
+      }
+    } else {
+      app.log( "No Options have been set." );
+      options = {};
     }
 
     if ( app.checkForPageElement() ) {
@@ -36,13 +66,6 @@ var Splash = function() {
         app.setSplashElements( dynamicObject, stickyObject, staticObject );
       } else {
         app.log( "You must set your Splash Elements or Height Breakpoint Manually and run." );
-      }
-
-      if ( onResizeBoolean && $.type( onResizeBoolean ) === "boolean" ) {
-        onResize = onResizeBoolean;
-        app.log( "Reponsive on-resize: Enabled" );
-      } else {
-        app.log( "Reponsive on-resize: Disabled" );
       }
 
       app.setDynamicElementsHeight();
