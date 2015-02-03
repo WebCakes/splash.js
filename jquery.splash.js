@@ -25,6 +25,7 @@ var Splash = function() {
   var pageObjectCheck;
 
   this.init = function( elements, options ) {
+    // Go through the 'elements' object
     if ( elements && $.type( elements ) === "object" ) {
       if ( elements.dynamicObject !== undefined ) {
         dynamicObject = elements.dynamicObject;
@@ -40,11 +41,14 @@ var Splash = function() {
       elements = {};
     }
 
+    // Go through the 'options' object
     if ( options && $.type( options ) === "object" ) {
       if ( options.pageObjectCheck !== undefined && $.type( options.pageObjectCheck ) === "string" ) {
+        // If the option exists and is a string, set it.
         app.setPageElementCheck( options.pageObjectCheck );
       }
       if ( options.onResizeBoolean !== undefined && $.type( options.onResizeBoolean ) === "boolean" ) {
+        // If the option exists and is a boolean, set it.
         onResize = options.onResizeBoolean;
 
         if ( onResize ) {
@@ -54,6 +58,7 @@ var Splash = function() {
         }
       }
       if ( options.debugBoolean !== undefined && $.type( options.debugBoolean ) === "boolean" ) {
+        // If the option exists and is a boolean, set it.
         debug = options.debugBoolean;
       }
     } else {
