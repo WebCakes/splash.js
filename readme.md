@@ -25,7 +25,6 @@ var myapp = new Splash();
 
 ```javascript
 var myapp = new Splash();
-myapp.init( , , , , true );
 myapp.init( 
   elements = {
     'dynamicObject' : $('#myIntroHeader'),
