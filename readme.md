@@ -42,7 +42,7 @@ myapp.init(
 The `init()` method can take 2 objects as parameters.
 These are the objects and their parameters and the data they expect.
 
-** Elements: **
+**Elements:**
 
 1. The Dynamic Element ( 'dynamicObject' ) => jQuery object -- **Required**
   * This is the element that changes its height depending on the height of the browser.
@@ -51,7 +51,7 @@ These are the objects and their parameters and the data they expect.
 3. The Static Element ( 'staticObject' ) => jQuery object -- *Optional*
   * This is the element that doesn't move and acts as a regular DOM element. This is best used for Navigation elements.
 
-** Options: **
+**Options:**
 
 1. A Page Element ( 'pageObjectCheck' ) => jQuery Selector String -- *Optional*
   * This is an element on the page that the plugin checks to see if it exists before running. `"body.frontpage"` looks for `<body class="frontpage">` before executing. 
