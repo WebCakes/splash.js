@@ -21,10 +21,11 @@ var splashElements = {}; // All Elements that are involved with the Splash Scree
 var Splash = function() {
   var app = this;
   var debug = false;
-  var dynamicObject, stickyObject, staticObject;
-  var pageObjectCheck;
 
   this.init = function( elements, options ) {
+    var dynamicObject, stickyObject, staticObject;
+    var pageObjectCheck;
+
     // Go through the 'elements' object
     if ( elements && $.type( elements ) === "object" ) {
       if ( elements.dynamicObject !== undefined ) {
