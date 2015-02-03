@@ -25,29 +25,46 @@ var myapp = new Splash();
 
 ```javascript
 var myapp = new Splash();
-myapp.init( $('#myIntroHeader'), $('#myWelcomeMessage'), $('#myStaticNavigation'), "body.frontpage", true );
+myapp.init( , , , , true );
+myapp.init( 
+  elements = {
+    'dynamicObject' : $('#myIntroHeader'),
+    'stickyObject' : $('#myWelcomeMessage'),
+    'staticObject' : $('#myStaticNavigation')
+  },
+  options = {
+    'pageObjectCheck' : "body.frontpage",
+    'onResizeBoolean' : true,
+    'debugBoolean' : false
+  }
+);
 ```
 
-The `init()` method can take 6 parameters.
-These are the parameters in order and the data they expect.
+The `init()` method can take 2 objects as parameters.
+These are the objects and their parameters and the data they expect.
 
-1. The Dynamic Element => jQuery object -- **Required**
+** Elements: **
+
+1. The Dynamic Element ( 'dynamicObject' ) => jQuery object -- **Required**
   * This is the element that changes its height depending on the height of the browser.
-2. The Sticky Element => jQuery object -- Optional *( default: null )*
+2. The Sticky Element ( 'stickyObject' ) => jQuery object -- *Optional*
   * This is the element that will *stick* to the bottom of the page.
-3. The Static Element => jQuery object -- Optional *( default: null )*
+3. The Static Element ( 'staticObject' ) => jQuery object -- *Optional*
   * This is the element that doesn't move and acts as a regular DOM element. This is best used for Navigation elements.
-4. A Page Element => jQuery Selector String -- Optional *( default: null )*
+
+** Options: **
+
+1. A Page Element ( 'pageObjectCheck' ) => jQuery Selector String -- *Optional*
   * This is an element on the page that the plugin checks to see if it exists before running. `"body.frontpage"` looks for `<body class="frontpage">` before executing. 
-5. Responsive / onResize => true or false Boolean -- Optional *( default: false )*
+2. Responsive / onResize ( 'onResizeBoolean' ) => true or false Boolean -- *Optional* *( default: false )*
   * This executes the dynamic element height resizing method as the user resizes the window. This allows for immediate refreshing of the height without a page load.
-6. Debug => true or false Boolean -- Optional *( default: false )*
+3. Debug ( 'debugBoolean' ) => true or false Boolean -- *Optional* *( default: false )*
   * This turns on debug messages within the browser's console.
 
 **If you do not need to use an optional parameter please set it to its default**
 
 ```javascript
-myapp.init( $('#myIntroHeader'), null, null, null, false, false );
+myapp.init( { 'dynamicObject' : $('#myIntroHeader') } );
 ```
 
 ### Other Methods
